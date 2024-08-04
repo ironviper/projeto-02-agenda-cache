@@ -1,0 +1,578 @@
+:root {
+    /* --bg-color: #E9E9E9; */
+    --bg-color: white;
+    --page-color: #FEFFF5;
+    --line-color: #65f1fb;
+    /* --text-color: #2054BA; */
+    --text-color: #0303b5;
+
+    --bic-red: #800B1C;
+    --bic-green: #3d5840;
+    --bic-black: #010200;
+    --bic-blue: #012EA5;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.container {
+    padding-top: 25px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+
+    justify-items: center;
+    margin: auto;
+}
+
+
+/*#region Above agenda */
+
+.above-agenda-main-container {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+
+    width: 60%;/* width: 1170px; */
+    aspect-ratio: 10;/* height: 131.5px; */
+    margin: auto;
+
+    background-color: var(--page-color);
+
+    box-shadow: inset 0px -8px 0px #FFFFFF;
+    filter: drop-shadow(0px 8px 16.7px rgba(0, 0, 0, 0.25));
+
+}
+.above-agenda-main-container::after { /* Torn paper image */
+    content: "";
+    position: absolute;
+
+    /* Makes the center of the image always centered at the bottom border of the .above-agenda-main-container */
+    transform: translateY(50%);
+    bottom: 0%;
+
+    height: 20%;
+    width: 100%;
+    background: url(./images/torn_paper_seamless_texture.png);
+    background-size: contain;
+}
+
+.furos-container {
+    display: flex;
+
+    justify-content: space-around;
+
+    width: 100%;
+    position: absolute;
+    top: 3%;
+
+    .furo {
+    
+        border-radius: 50%;
+        /* width: 27px;
+        height: 27px; */
+        width: 2.3%;
+        aspect-ratio: 1;
+
+        background: #E9E9E9;
+        box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+
+    }
+}
+
+.name-phone-btn-container {
+    display: flex;
+
+    justify-content: space-between;
+    
+    margin-left: 3.4188%; /* 40px */
+    margin-right: 3.4188%; /* 40px */
+
+    transform: translateY(10%);
+
+    .name-phone-container {
+        display: flex;
+
+        justify-content: space-between;
+        
+
+        .name-input-container, .phone-input-container {
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            
+            border: 3px solid var(--line-color);
+            border-radius: 46px;
+
+            padding: 0 1rem 0 1rem;
+            
+
+            font-size: 2rem;
+            font-weight: normal;
+            font-family: 'Source Serif Pro';
+            color: var(--line-color);
+            
+            input {
+                border: none;
+                background: none;
+                outline: none;
+
+                width: 100%;
+
+                font-family: 'Just Another Hand';
+                font-size: 2.5rem;
+                color: var(--bic-blue);
+                caret-color: var(--bic-blue);
+
+                border-bottom: 3px solid var(--line-color);
+
+                height: 2rem;
+                line-height: 2rem;
+                padding-top: 0.5rem;
+                transform: translateY(-0.2rem);
+            }
+
+            .error {
+                position: absolute;
+                width: max-content;
+
+                translate: 0 101%;
+                font-family: 'Just Another Hand';
+                font-size: 1em;
+                color: var(--bic-red);
+            }
+
+        }
+
+
+        .name-input-container {
+            width: 30.625rem; /* 490px; */
+            height: 3.25rem; /* 52px; */
+        }
+
+
+        .phone-input-container {
+            width: 23.1875rem; /* 371px; */
+            height: 3.25rem; /* 52px; */
+        }
+    }
+
+    #btn-add-contact {
+        background: none;
+
+        border: 3px solid var(--line-color);
+        border-radius: 46px;
+
+        width: 12.75rem; /* 204px; */
+        height: 3.25rem; /* 52px; */
+        
+        line-height: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: normal;
+        font-family: 'Source Serif Pro';
+        color: var(--line-color);
+
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    }
+    #btn-add-contact:hover {
+        text-decoration: underline var(--bic-blue);
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+/*#endregion Above agenda */
+
+
+
+/*#region Agenda side buttons */
+
+.agenda-arrows-container {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+}
+.agenda-arrows-container .btn-flip-page {
+    border: none;
+    background: none;
+    height: 5rem;
+
+    margin: auto;
+
+    svg {
+        fill: var(--bic-blue);
+        height: 100%;
+        width: 100%;
+    }
+}
+.agenda-arrows-container .btn-flip-backward {
+    svg {
+        transform: scale(-1, 1); /* Flip the svg to point backwards */
+    }
+}
+
+/*#endregion Agenda side buttons */
+
+.agenda-container {
+    margin-top: 3%;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+
+/* #region Agenda */
+
+.agenda {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+    margin: auto;
+
+    background-color: rgba(199, 181, 101, 0.699);
+    
+    aspect-ratio: 1.6; /* height:  682px; */
+    width:  51vw; /* 1090px; */ /* clamp(602px,56%,65%) */
+
+    .pages-shadow {
+        position: absolute;
+
+        pointer-events: none;
+    
+        /* Center the shadow in the middle of the pages */
+        left: 50%;
+        transform: translateX(-50%);
+    
+        width: 20%; /* 200px */
+        height: 100%;
+    
+        background: linear-gradient(270deg, #FFFFFF 25%, #C1C2B5 49%, #000000 50%, #C1C2B5 51%, #FFFFFF 75%);
+        mix-blend-mode: multiply;
+    }
+}
+
+.page-container {
+    position: relative;
+
+    grid-row: 1;
+    grid-column: 2;
+
+    transform-origin: left;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    transition: transform 1s ease-in-out;
+
+    &.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .page-front, .page-back {
+        background-color: var(--page-color);
+        
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        backface-visibility: hidden;
+
+        font-family: 'Source Serif Pro';
+        color: var(--line-color);
+
+        .page-number {
+            position: absolute;
+            right: 1rem;
+            bottom: 0.5rem;
+        }
+    }
+
+    .page-back {
+        transform: rotateY(180deg);
+
+
+        .page-number { /* Adjust the page number on the back of the page */
+            left: 1rem;
+        }
+    }
+}
+
+
+.page-table {
+    height: 100%;
+    table {
+        width: 100%;
+        table-layout: fixed;
+
+        border-collapse: collapse;
+
+        tr {
+            position: relative;
+
+            .delete-contact {
+                all: unset; /* Remove all previous styles applied to <td> */
+                /* border: unset;
+                padding: unset;
+                transform: unset;
+                font-size: unset;
+                overflow: unset;
+                font-size: unset; */
+
+                position: absolute;
+
+                /* Center horizontally */
+                top: 50%;
+                translate: 0 -50%;
+
+                right: 1rem;
+
+                height: 60%;
+                aspect-ratio: 1;
+                
+
+                .btn-delete-contact {
+                    width: 100%;
+                    height: 100%;
+
+                    background: none;
+                    outline: none;
+                    border: none;
+
+                    svg {
+                        fill: var(--bic-red);
+                    }
+                }
+                .btn-delete-contact:hover {
+                    cursor: pointer;
+
+                    svg {
+                        fill: var(--bic-blue);
+                    }
+                }
+            }
+
+            &.empty {
+                .delete-contact {
+                    display: none;
+                }
+            }
+        }
+
+        th,td {
+            border-bottom: 3px solid var(--line-color);
+
+            &.phone {
+                border-left: 4px solid var(--line-color);
+            }
+        }
+
+        th {
+            height: 5.5rem; /* 90px; */
+
+            font-weight: normal;
+
+            &.name {
+                width: 60%;
+
+                font-size: 3rem;
+            }
+            &.phone {
+                width: 40%;
+
+                font-size: 2rem;
+            }
+        }
+
+        td {
+            
+            height: 2.75rem; /* 50px; */ 
+
+            /* Align the text to the line, so it looks like it was written in the line */
+            vertical-align: bottom;
+            transform: translateY(0.8ex);
+            padding-left: 0.5rem;
+
+            font-family: 'Just Another Hand';
+            font-weight: normal;
+            color: var(--text-color);
+            font-size: 2rem;
+
+            overflow:  hidden;
+            
+            text-overflow: ellipsis;
+
+        }
+
+
+    }
+}
+
+
+.page-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    --_shadow: 80px;
+    --_shadow-inset: -76px;
+
+    --shadow: var(--_shadow);
+    --shadow-inset: var(--_shadow-inset);
+
+
+    /* box-shadow: var(--shadow) -9px 50px rgba(0, 0, 0, 0.15), 
+    var(--shadow) 9px 50px rgba(0, 0, 0, 0.15), 
+    var(--shadow) 0px 50px rgba(0, 0, 0, 0.15), 
+    inset var(--shadow-inset) 0px 82px rgba(0, 0, 0, 0.2); */
+
+    /* box-shadow: inset var(--shadow-inset) 0px 82px rgba(0, 0, 0, 0.075); */
+
+
+    pointer-events: none;
+
+}
+.page-back .page-shadow {
+    --shadow: calc(var(--_shadow) * -1);
+    --shadow-inset: calc(var(--_shadow-inset) * -1);
+}
+
+
+.hide-page-shadow * {
+    box-shadow: unset;
+}
+
+/* #endregion Agenda */
+
+
+
+/*#region Below agenda */
+
+.below-agenda-container {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 1rem;
+    
+    margin-inline: 5rem;
+}
+
+.btn-add-page {
+    border: none;
+    background: none;
+    height: 4rem;
+
+    svg {
+        fill: var(--bic-green);
+        height: 100%;
+        width: 100%;
+    }
+}
+.btn-remove-page {
+    border: none;
+    background: none;
+    height: 4rem;
+
+    margin-left: 1rem;
+
+    svg {
+        fill: var(--bic-red);
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.pages-number-container {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+
+    font-family: 'Just Another Hand';
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+
+    color: var(--bic-black);
+
+    #agenda-current-page {
+        width: 4ch;
+
+        border: none;
+        border-radius: 8px;
+
+        background: none;
+        box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.25);
+
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        text-align: inherit;
+    }
+
+    #agenda-total-pages {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        text-align: inherit;
+    }
+
+    #agenda-current-page:focus {
+        outline: none;
+    }
+}
+
+.btn-add-page, .btn-remove-page, .btn-flip-forward, .btn-flip-backward {
+    /* box-sizing: content-box; */
+    padding: 0.25rem;
+    border-radius: 15%;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.btn-add-page:hover, .btn-remove-page:hover, .btn-flip-forward:hover, .btn-flip-backward:hover, #btn-add-contact:hover {
+    cursor: pointer;
+}
+.btn-add-page:active, .btn-remove-page:active, .btn-flip-forward:active, .btn-flip-backward:active, #btn-add-contact:active {
+    box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    transform: translateY(10%);
+}
+
+/*#endregion Below agenda */
+
+
+
+
+
+
+
+
+
+
+/*#region Utils Classes */
+
+.display-none {
+    display: none;
+}
+
+
+/*#endregion Utils Classes */

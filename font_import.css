@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Source Serif Pro-Bold';
+    src: url('./fonts/SourceSerifPro-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url('./fonts/SourceSerifPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Serif Pro-Light';
+    src: url('./fonts/SourceSerifPro-Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Just Another Hand';
+    src: url('./fonts/justanotherhand-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

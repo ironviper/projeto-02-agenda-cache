@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font_import.css">
+
+    <title>Agenda</title>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="svg-icon-arrow" viewBox="-0.0015 59.7332 348.692 229.2" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <g>
+                    <path d="M345.649,130.289c-35.495-17.136-64.872-40.392-91.8-68.544c-3.06-3.06-6.731-2.448-9.18,0.612
+                            c-1.224-0.612-1.836-1.224-2.448-1.224c-7.344,0-7.956,11.016-7.956,15.912c-0.611,11.016-1.224,21.42-1.224,32.436
+                            c-63.648-0.612-127.909,0-191.557-9.792c-3.06-0.612-6.732,0.612-7.956,3.672c-0.612,0-1.836,0-2.448,0.612
+                            c-5.508,4.284-10.404,9.18-15.3,14.076c-4.896,4.284-8.568,9.792-13.464,13.464c-3.672,3.06-2.448,6.732,0,8.568
+                            c-0.612,23.256-1.836,45.9,1.224,69.156c0.612,6.731,10.404,7.956,12.24,3.06h0.612c59.976,5.508,122.4,6.12,182.376,2.448
+                            c-10.403,20.196-2.447,42.84,1.225,65.484c0.611,3.672,3.06,4.896,5.508,4.283c0,3.672,3.672,6.12,6.731,3.061
+                            c37.332-36.108,81.396-58.752,123.013-88.128c4.284-3.061,2.447-10.404-3.061-10.404c6.732-14.688,10.404-30.6,15.912-45.9
+                            c0.612-1.836,0.612-3.672-0.611-4.896C349.322,136.409,349.322,132.125,345.649,130.289z M235.49,122.333
+                            c3.06,0,4.896-1.836,6.119-4.284c1.837-0.612,3.673-2.448,3.673-5.508c0-9.792,1.224-19.584,2.447-29.376
+                            c0-2.448,0.612-5.508,1.225-7.956c23.256,25.704,51.408,46.512,82.62,62.424c-14.688,15.3-30.601,28.152-47.736,40.391
+                            c-12.852,9.181-27.54,17.137-39.78,26.929c0-0.612,0-1.224,0-1.836c0-10.404,0.612-20.808-0.611-31.212
+                            c3.06-3.672,0.611-10.404-6.12-9.18c-63.649,8.568-125.461-2.448-189.721,1.836c-1.224-17.136-1.836-34.272-1.836-51.408
+                            C108.805,122.945,172.454,122.945,235.49,122.333z M211.622,275.945c-3.672-21.42-11.628-45.288-3.061-66.097
+                            c0.612-1.224,0-1.836-0.611-2.447c-0.612-1.836-2.448-3.672-5.509-3.672c-61.2-3.673-124.848-3.061-186.048,2.447h-0.612
+                            c-2.448-21.42-4.284-43.452-4.896-64.872c0.612-0.612,1.224-1.836,1.836-3.06c1.836-5.508,6.732-11.016,10.404-15.3
+                            c3.06-3.672,6.732-7.344,9.792-11.628c0,18.972,1.836,37.332,4.896,56.304c0.612,2.448,3.06,3.672,5.508,3.672
+                            c0.612,1.224,1.224,1.836,3.06,1.836c58.14,5.508,130.357,23.868,187.884,4.284c-1.224,8.568-2.448,16.524-3.672,25.092
+                            c-0.612,4.896-3.06,12.24-1.836,18.36c-1.224,3.06,0.612,6.731,4.284,6.731c2.448,1.225,5.508,0.612,7.344-1.224l0.612-0.612
+                            c0.611,0,1.224,0,1.836,0c2.448,0,3.672-1.836,3.06-3.672c29.988-14.076,61.2-37.943,85.068-62.424
+                            c-3.06,11.628-5.508,23.256-7.956,34.884C281.39,210.461,240.998,243.509,211.622,275.945z"></path>
+                </g>
+            </g>
+        </symbol>
+
+        <symbol id="svg-icon-add" viewBox="0 0 414.312 414.312" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+            <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M398.932,139.543l-1.133-0.472l-0.944-0.802c-3.316-2.834-7.495-4.268-12.441-4.268H272.546l-0.346-7.432 c-0.69-14.637-1.219-29.28-1.741-43.922c-0.736-20.367-1.493-41.423-2.697-62.075c-0.73-12.355-9.855-18.055-18.158-19.266 l-1.158-0.261C246.12,0.333,244.084,0,242.047,0h-97.71c-10.364,0-15.102,5.949-17.25,10.936l-0.754,1.737l-1.465,1.201 c-4.192,3.443-6.287,8.336-6.23,14.543c0.35,37.719,4.222,75.309,7.967,107.107l0.957,8.097l-37.133,2.724 c-19.999,1.47-39.991,2.943-59.991,4.377c-3.389,0.244-6.416,1.161-9.244,2.793l-0.889,0.515l-0.995,0.264 c-8.765,2.351-15.125,10.494-15.125,19.355v5.583c0,3.031,0.805,6.094,2.397,9.11l0.754,1.427l0.114,1.609 c2.123,27.218,2.303,54.68,2.308,82.771c0,13.441,10.077,17.356,14.414,18.418l0.937,0.289c2.48,0.954,4.951,1.411,7.561,1.411 h102.885l0.17,7.622c0.267,11.827,0.665,23.648,1.066,35.465c0.635,18.591,1.29,37.815,1.384,56.803 c0.066,13.192,9.884,17.219,14.106,18.342l0.919,0.31c2.509,1.01,5.091,1.503,7.889,1.503h94.913c5.474,0,9.973-1.742,13.391-5.18 l1.538-1.523c3.443-3.423,5.189-7.932,5.189-13.416c-0.005-29.178-0.208-63.576-1.676-97.37l-0.355-8.14h113.128 c12.659,0,18.098-9.1,18.981-17.616l0.183-1.777l0.935-1.523c1.889-3.062,2.812-6.454,2.812-10.364V156.904 C410.118,146.396,404.045,141.658,398.932,139.543z M369.885,248.455H253.219c-15.234,0-18.316,12.599-18.905,16.463l-0.3,1.25 c-0.792,2.427-1.097,4.879-0.935,7.5c2.118,34.042,2.569,67.349,2.722,92.561l0.046,7.846h-57.706l-0.208-7.586 c-0.262-9.303-0.584-18.616-0.911-27.919c-0.64-18.332-1.305-37.282-1.404-56c-0.01-1.752-0.249-3.483-0.759-5.454l-0.274-1.076 l0.035-1.112c0.193-6.129-1.825-11.837-5.527-15.665c-3.359-3.474-7.929-5.23-13.591-5.23H49.942l-0.084-7.714 c-0.17-16.849-0.8-33.301-1.866-48.906l-0.536-7.749l36.409-2.671c19.974-1.473,39.941-2.938,59.908-4.373 c1.731-0.127,3.458-0.479,5.423-1.109l1.369-0.437l1.439,0.084c6.251,0.375,11.882-1.612,15.059-5.215 c2.668-3.021,3.687-7.223,3.031-12.484c-5.329-42.754-9.166-78.696-10.555-115.131l-0.312-8.097h69.312l0.319,7.472 c0.473,11.212,0.869,22.427,1.265,33.644c0.772,21.886,1.579,44.521,2.955,66.702c0.087,1.338,0.311,2.704,0.701,4.296 l0.233,1.856c0.036,9.968,5.982,20.035,19.195,20.035h116.676V248.455z"/> </g> </g> </g>
+            
+        </symbol>
+
+        <symbol id="svg-icon-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465.519 465.519">
+            <g>
+                <g>
+                    <path d="M455.175,69.675c-23.979-19.573-46.104-40.883-68.771-61.703c-6.159-5.657-13.67-5.527-19.474-2.432    c-5.062,2.702-10.496,10.59-14.335,14.866c-33.85,37.62-68.659,74.362-107.531,107.6c-4.362,3.732-11.058,3.225-14.815-1.117    c-32.847-37.942-61.629-78.543-89.593-119.649c-3.776-5.548-9.456-7.571-14.97-7.196c-5.735,0.388-11.56,3.633-13.604,4.565    c-1.19,0.536-2.356,1.222-3.488,2.08C84.231,25.146,58.861,42.376,33.418,59.55c-0.381,0.254-0.729,0.53-1.056,0.808    c-0.562,0.477-5.553,2.968-8.501,7.896c-3.194,5.337-3.48,12.22,1.933,18.093c41.588,45.092,80.755,92,122.176,137.217    c3.88,4.232,3.438,10.593-0.924,14.325c-47.642,40.775-86.709,89.402-137.9,126.832c-3.006,2.199-4.738,4.697-5.461,7.257    c-1.386,4.921,1.265,11.542,2.773,14.213c0.82,1.458,1.995,2.874,3.582,4.215c23.583,19.972,45.286,41.645,67.524,62.83    c6.053,5.769,13.574,5.758,19.438,2.752c5.106-2.62,10.679-10.404,14.602-14.599c34.599-37.064,70.134-73.23,109.674-105.83    c4.43-3.656,11.1-3.032,14.782,1.386c32.093,38.481,60.057,79.552,87.209,121.109c3.666,5.606,9.308,7.724,14.832,7.439    c5.738-0.294,11.619-3.442,13.69-4.337c1.193-0.522,2.377-1.183,3.524-2.021c24.725-18.058,50.435-34.855,76.215-51.607    c0.381-0.254,0.736-0.518,1.077-0.792c0.563-0.468,5.591-2.874,8.638-7.739c3.306-5.281,3.732-12.167-1.574-18.134    c-41.132-46.27-79.755-94.354-120.76-140.71c-3.809-4.302-3.347-10.771,0.965-14.566c47.438-41.792,85.787-91.612,136.699-130.242    c2.966-2.25,4.651-4.778,5.316-7.346c1.29-4.94-1.498-11.514-3.057-14.165C457.988,72.395,456.79,70.996,455.175,69.675z     M413.083,89.507c-46.936,40.398-84.594,89.073-133.281,127.988c-2.112,1.696-3.55,3.526-4.408,5.413    c-1.609,3.542-1.812,10.191-0.726,14.035c0.594,2.118,1.747,4.215,3.564,6.221c40.771,44.772,78.633,91.658,118.165,137.339    c3.763,4.342,2.925,10.396-1.869,13.543c-14.355,9.436-28.619,18.981-42.675,28.782c-4.713,3.285-11.075,2.098-14.27-2.676    c-25.248-37.771-51.709-74.758-81.466-109.705c-3.723-4.372-8.557-12.558-13.299-15.797c-5.947-4.058-14.485-5.18-21.754,0.314    c-46.207,34.906-86.562,75.007-125.52,116.433c-3.936,4.189-10.461,4.353-14.607,0.381c-9.478-9.095-19.009-18.144-28.764-26.994    c-4.248-3.854-4.083-9.821,0.338-13.487c47.735-39.618,86.348-87.661,135.8-125.767c1.975-1.518,3.369-3.168,4.283-4.88    c1.706-3.184,2.163-9.579,0.982-13.302c-0.655-2.049-1.831-4.077-3.638-5.994c-41.657-44.095-80.438-90.348-120.866-135.369    c-3.839-4.273-3.115-10.336,1.627-13.576c14.16-9.666,28.224-19.438,42.071-29.467c4.654-3.369,11.04-2.298,14.32,2.417    c25.994,37.351,53.189,73.905,83.647,108.359c3.801,4.306,8.788,12.393,13.581,15.554c6.022,3.968,14.594,4.951,21.754-0.66    c45.503-35.66,85.051-76.424,123.176-118.484c3.859-4.253,10.385-4.545,14.604-0.646c9.658,8.945,19.383,17.837,29.311,26.525    C417.496,79.793,417.445,85.757,413.083,89.507z"/>
+                </g>
+            </g>
+        </symbol>
+
+        <symbol id="svg-icon-trash" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470.713 470.714">
+            <g>
+                <g>
+                    <path d="M96.01,133.456c3.884,2.676,8.163,4.332,12.619,5.292c-5.324,99.039-15.803,202.436,20.416,296.978
+                        c1.742,4.545,4.938,7.389,8.604,8.846c1.26,1.762,3.052,3.326,5.637,4.479c64.729,28.746,133.522,27.487,199.892,4.459
+                        c8.674-3.012,11.314-11.243,9.735-18.256c12.604-95.928,24.562-194.694,14.67-291.43c7.83-1.725,15.147-5.027,20.586-11.075
+                        c10.745-11.959,8.679-27.345,3.387-41.068c0.011-3.816-1.787-7.467-5.87-9.973c-1.62-1.254-3.544-2.127-5.596-2.59
+                        c-29.727-12.703-61.367-19.342-93.734-22.427c0.569-2.892,0.32-6.058-1.081-9.308C275.168,24.077,255.044-3.4,226.105,0.345
+                        c-27.863,3.603-41.365,30.793-47.007,55.726c-18.611,0.978-37.039,2.207-55.035,3.245c-0.125,0.005-0.236,0.048-0.36,0.058
+                        c-0.854-0.109-1.722-0.163-2.61-0.058c-19.291,2.267-35.53,11.491-43.975,29.609c-1.123,2.407-1.678,4.948-1.737,7.439
+                        c-0.749,2.455-0.8,5.278,0.239,8.444C79.532,116.676,85.656,126.312,96.01,133.456z M324.105,428.545
+                        c-54.888,16.904-112.16,18.712-165.844-5.129c-0.815-0.36-1.623-0.579-2.422-0.802c-32.966-90.754-22.635-189.447-17.514-284.177
+                        c65.534-4.644,131.547-5.657,196.814,2.567c0.771,0.812,1.655,1.518,2.646,2.138C347.57,237.831,336.404,334.526,324.105,428.545z
+                        M228.662,29.693c12.937-1.676,22.006,13.327,27.591,25.111c-15.449-0.536-30.97-0.447-46.445,0
+                        C212.948,43.419,218.445,31.013,228.662,29.693z M110.845,92.726c-1.826,1.579,4.918-2.508,2.775-1.617
+                        c1.498-0.625,3.075-1.046,4.639-1.478c-0.358,0.099,4.903-0.879,2.833-0.64c0.183-0.021,0.355-0.074,0.536-0.1
+                        c0.785,0.074,1.567,0.152,2.43,0.1c77.348-4.481,167.339-15.376,240.798,15.658c0.233,0.69,0.533,1.356,0.746,2.059
+                        c0.295,1.018,0.538,2.054,0.746,3.093c0.016,0.23,0.031,0.475,0.057,0.833c0.02,0.536-0.021,1.077-0.041,1.612
+                        c-0.01,0.045-0.035,0.15-0.051,0.203c-0.314-0.053-2.468,1.498-1.59,1.331c-1.63,0.604-3.326,1.03-5.017,1.409
+                        c-0.808,0.183-1.874,0.312-3.082,0.406c-1.574-1.141-3.529-1.993-6.038-2.336c-75.291-10.336-150.897-9.422-226.528-3.499
+                        c-1.364,0.109-2.595,0.406-3.761,0.779c-7.373-0.104-12.075-3.682-15.157-11.263C106.564,96.885,108.057,95.138,110.845,92.726z"
+                        />
+                    <path d="M186.387,186.935c-0.178-19.128-29.853-19.144-29.681,0c0.437,47.81,5.949,95.075,11.873,142.453
+                        c2.338,18.732,32.044,18.961,29.681,0C192.332,282.005,186.824,234.744,186.387,186.935z"/>
+                    <path d="M248.712,183.967c-1.026-19.032-30.709-19.136-29.681,0c2.829,52.483,4.723,105.01,10.39,157.293
+                        c2.039,18.819,31.738,19.017,29.681,0C253.434,288.977,251.536,236.45,248.712,183.967z"/>
+                    <path d="M284.857,186.427c7.993,58.711,4.169,118.058,3.92,177.089c-0.081,19.139,29.595,19.134,29.681,0
+                        c0.26-61.896,3.393-123.445-4.98-184.983C310.902,159.648,282.308,167.723,284.857,186.427z"/>
+                </g>
+            </g>
+            
+        </symbol>
+
+    </svg>
+
+
+    <div class="container">
+        <div class="main-container">
+            <div class="above-agenda-main-container">
+                <div class="furos-container">
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                    <div class="furo"></div>
+                </div>
+                <form action="javascript:book.addContact()">
+                    <div class="name-phone-btn-container">
+                        <div class="name-phone-container">
+                            <div class="name-input-container">
+                                <label for="name-input">NOME: </label>
+                                <input type="text" id="name-input" required>
+                            </div>
+                            <div class="phone-input-container">
+                                <label for="phone-input">TELEFONE: </label>
+                                <input type="tel" id="phone-input" required>
+                                <p id="error-phone" class="error display-none">O telefone deve conter apenas números!</p>
+                            </div>
+                        </div>
+                        <button id="btn-add-contact">ADICIONAR CONTATO</button>
+        
+                    </div>
+                </form>
+            </div>
+            <div class="agenda-arrows-container">
+                <button class="btn-flip-page btn-flip-backward" title="Flip page backward">
+                    <svg viewBox="0 0 348.692 229.2"><use href="#svg-icon-arrow"/></svg>
+                </button>
+                <div class="agenda-container">
+                    <div id="agenda" class="agenda" style="z-index: 1;">
+                        <div class="pages-shadow" style="z-index: 99999999;"></div>
+                        <div class="page-container" style="z-index: 0;">
+                            <div class="page-front">
+                                <div class="page-shadow"></div>
+                                <div class="page-table">
+                                    <table>
+                                        <thead>
+                                            <th class="name">NOME</th>
+                                            <th class="phone">TELEFONE</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty" >
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h3 class="page-number">01</h3>
+                            </div>
+                            <div class="page-back">
+                                <div class="page-shadow"></div>
+                                <div class="page-table">
+                                    <table>
+                                        <thead>
+                                            <th class="name">NOME</th>
+                                            <th class="phone">TELEFONE</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="empty">
+                                                <td class="name"></td>
+                                                <td class="phone"></td>
+                                                <td class="delete-contact">
+                                                    <button class="btn-delete-contact" name="Delete contact" >
+                                                        <svg viewBox="0 0 470.713 470.714" style="pointer-events: none;"><use href="#svg-icon-trash"/></svg>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h3 class="page-number">02</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="below-agenda-container">
+                        <div class="page-add-delete-btn-container">
+                            <button class="btn-add-page" title="Add new page">
+                                <svg viewBox="0 0 414.312 414.312"><use href="#svg-icon-add"/></svg>
+                            </button>
+                            <button class="btn-remove-page" title="Remove last page">
+                                <svg viewBox="0 0 465.519 465.519"><use href="#svg-icon-delete"/></svg>
+                            </button>
+                        </div>
+                        <div class="pages-number-container">
+                            <input type="text" name="agenda-current-pages" id="agenda-current-page" value="01">
+                            <h1 id="agenda-total-pages">/02</h1>
+                        </div>
+        
+                    </div>
+                </div>
+        
+                <button class="btn-flip-page btn-flip-forward" title="Flip page forward">
+                    <svg viewBox="0 0 348.692 229.2"><use href="#svg-icon-arrow"/></svg>
+                </button>
+        
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
